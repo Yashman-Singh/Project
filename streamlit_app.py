@@ -6,8 +6,7 @@ st.title("Stock Market Prediction Using Machine Learning")
 # Introduction/Background
 st.header("Introduction/Background")
 st.write("""
-There are two main ways for investors to analyze a stock. The first way is through a fundamental analysis, which considers the intrinsic value of stocks, the performance of the industry, the economy, and the political climate. The other main way is through technical analysis, which involves viewing market activity, including previous prices and volumes. 
-Due to the volatility of the stock market, it is difficult to make accurate predictions. However, many researchers are attempting to predict price changes using various combinations of preprocessing and machine learning methods.
+There are two main ways for investors to analyze a stock. The first way is through a fundamental analysis which takes into account “the intrinsic value of stocks, and performance of the industry, economy, political climate etc” [1]. The other main way is through a technical analysis by viewing the market activity, including the previous prices and volumes. Due to the volatility of the stock market, it is difficult to make accurate predictions [2]. While it may be difficult, there is plenty of research attempting to predict price changes using a variety of combinations of preprocessing and ML methods [2].
 """)
 
 # Dataset description
@@ -29,16 +28,16 @@ st.header("Methods")
 
 st.subheader("Preprocessing")
 st.write("""
-- **Z-score Standardization**: To account for varying stock prices across different stocks and remove outliers, the data for stock prices will be normalized using Z-score standardization (via `StandardScaler` in scikit-learn).
-- **Feature Engineering**: New features such as moving averages and rolling statistics will be created to enhance model performance. Moving averages help smooth out price data to identify trends, while rolling statistics capture short-term variability in stock prices.
-- **Train-Test Split**: A time-based train-test split will be used, with earlier data for training and more recent data for testing. This approach mimics real-world scenarios where future prices are predicted based on past data.
+- **Z-score Standardization**: To account for varying stock prices across different stocks as well as remove outliers, the data for the stock prices will be normalized using Z-score standardization. The StandardScaler class in scikit-learn will be used.
+- **Feature Engineering**: New features such as moving averages and rolling statistics will be created to enhance model performance. Moving averages will help smooth out price data to identify trends more easily while rolling statistics will capture the short-term variability in stock prices.
+- **Train-Test Split**: To evaluate the model’s effectiveness, the dataset will be split into training and testing sets. We will use a time-based split, where earlier data is used for training and more recent data is reserved for testing. This will help mimic real-world scenarios where future prices are predicted based on past data.
 """)
 
 st.subheader("ML Algorithms/Models")
 st.write("""
-- **Random Forest**: Resistant to noise and volatility, Random Forest averages the results of multiple decision trees made with random data points, reducing potential overfitting.
-- **Long Short-Term Memory (LSTM)**: LSTM’s architecture allows it to ignore irrelevant short-term fluctuations and focus on long-term patterns, making it ideal for noisy stock market data.
-- **Support Vector Machine (SVM)**: SVM is suited for stock market prediction due to its ability to model complex, non-linear relationships by projecting features into higher-dimensional spaces, capturing subtle trends in the data.
+- **Random Forest**: Random forest will be used as it is resistant to the noise and volatility of the market. Since it averages out the results of multiple decision trees made with random data points, it also reduces potential overfitting. The RandomForestRegressor class in sci-kit learn will be used.
+- **Long Short-Term Memory (LSTM)**: Stock market data is often noisy and filled with random fluctuations. LSTM's architecture allows it to ignore irrelevant short-term spikes (through the forget gate) while focusing on long-term patterns that are more indicative of future behavior.
+- **Support Vector Machine (SVM)**: SVM is well-suited for stock market prediction due to its ability to model complex, nonlinear relationships between input features by projecting them into higher-dimensional spaces. This helps in capturing subtle trends and dependencies in the data that simpler models might miss. The SVR class in scikit-learn will be used.
 """)
 
 # Evaluation metrics
@@ -46,6 +45,8 @@ st.header("Evaluation Metrics")
 st.write("""
 We will use the following quantitative metrics to evaluate model performance:
 - **Mean Squared Error (MSE)**: Measures the average squared difference between the predicted and actual stock prices.
+- **Root Mean Squared Error (RMSE)**: Provides error in the same units as the target variable.
+- **Mean Absolute Percentage Error (MAPE)**: Expresses accuracy as a percentage, making it easier to interpret.
 """)
 
 # References
