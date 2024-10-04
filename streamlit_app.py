@@ -6,7 +6,7 @@ st.title("Stock Market Prediction Using Machine Learning")
 # Introduction/Background
 st.header("Introduction/Background")
 st.write("""
-There are two main ways for investors to analyze a stock. The first way is through a fundamental analysis which takes into account “the intrinsic value of stocks, and performance of the industry, economy, political climate etc” [1]. The other main way is through a technical analysis by viewing the market activity, including the previous prices and volumes. Due to the volatility of the stock market, it is difficult to make accurate predictions [2]. While it may be difficult, there is plenty of research attempting to predict price changes using a variety of combinations of preprocessing and ML methods [2].
+There are two main ways for investors to analyze a stock. The first way is a fundamental analysis which takes into account “the intrinsic value of stocks, and performance of the industry, economy, political climate etc” [1]. The other way is through a technical analysis by viewing the market activity, including the previous prices and volumes. Due to the volatility of the stock market, it is difficult to make accurate predictions [2]. While it may be difficult, there is plenty of research attempting to predict price changes using a variety of combinations of preprocessing and ML methods [2]. The most commonly used methods fall into neural networks, support vector machines or genetic algorithms [3].
 """)
 
 # Dataset description
@@ -49,6 +49,11 @@ We will use the following quantitative metrics to evaluate model performance:
 - **Mean Absolute Percentage Error (MAPE)**: Expresses accuracy as a percentage, making it easier to interpret.
 """)
 
+st.header("Goals and Expectations")
+st.write("""
+We aim to develop a model that can accurately predict future stock movements by not overfitting our model to the training data. To make our model resilient, it will need to be trained on markets with varying levels of implied volatility and directions. By only using publicly available stock information, we are in adherence to ethical trading standards and regulations [4].
+""")
+
 # References
 st.header("References")
 st.write("""
@@ -62,6 +67,8 @@ st.write("""
 - **Jake Wang**: Created introduction/background, 1 preprocessing method, 1 ML model.
 - **Yashman Singh**: 2 ML models, 2 preprocessing methods, 1 quantitative metric, streamlit project.
 - **Manya Jain**: Collecting sources for the literature review, technical content and visuals for the powerpoint presentation, recording and posting the video, gantt chart.
+- **Jonathan Marto**: Collect 2 additional sources and contribute to literature review. Added project goals, sustainability and ethical considerations.
+- **Swapnil Mittal**: Recording and posting the video, quantitative metrics
 """)
 
 st.header("Gantt Chart")
