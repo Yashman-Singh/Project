@@ -51,14 +51,14 @@ We will use the following quantitative metrics to evaluate model performance:
 # References
 st.header("References")
 st.write("""
-1. K. Vanukuru, "Stock Market Prediction Using Machine Learning," International Research Journal of Engineering and Technology, 2018. [Online](https://doi.org/10.13140/RG.2.2.12300.77448).
-2. A. Gupta, Akansha, K. Joshi, M. Patel, and V. Pratap, "Stock Market Prediction using Machine Learning Techniques: A Systematic Review," 2023 International Conference on Power, Instrumentation, Control, and Computing (PICC), Thrissur, India, 2023. DOI: 10.1109/PICC57976.2023.10142862.
+[1] K. Vanukuru, “Stock Market Prediction Using Machine Learning,” International Research Journal of Engineering and Technology, vol. 5, no. 10, pp. 1032-35, 2018. [Online]. Available: https://doi.org/10.13140/RG.2.2.12300.77448.
+[2] A. Gupta, Akansha, K. Joshi, M. Patel and V. Pratap, "Stock Market Prediction using Machine Learning Techniques: A Systematic Review," 2023 International Conference on Power, Instrumentation, Control and Computing (PICC), Thrissur, India, 2023, pp. 1-6, doi: 10.1109/PICC57976.2023.10142862.
 """)
 
 # Contributions section
 st.header("Contributions")
 st.write("""
-- **Jake Wang**: Created the introduction/background, preprocessing method, and one ML model.
-- **Yashman Singh**: Worked on two ML models, two preprocessing methods, and one quantitative metric.
-- **Manya Jain**: Collected sources for the literature review, technical content, and visuals for the presentation, and worked on the Gantt chart.
+- **Jake Wang**: Created introduction/background, 1 preprocessing method, 1 ML model.
+- **Yashman Singh**: 2 ML models, 2 preprocessing methods, 1 quantitative metric, streamlit project.
+- **Manya Jain**: Collecting sources for the literature review, technical content and visuals for the powerpoint presentation, recording and posting the video, gantt chart.
 """)
