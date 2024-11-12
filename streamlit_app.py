@@ -75,3 +75,21 @@ st.write("""
 
 st.header("Gantt Chart")
 st.image("GanttChart.jpg", caption="", use_column_width=True)
+
+# Midterm Sections Below
+st.header("Results and Discussion")
+st.header("Visualizations")
+st.image("GanttChart.jpg", caption="", use_column_width=True)
+st.image("GanttChart.jpg", caption="", use_column_width=True)
+st.image("GanttChart.jpg", caption="", use_column_width=True)
+
+st.header("Quantitative Metrics")
+st.write("""
+**Confusion Matrix:**
+- Our initial model struggles to accurately distinguish between "Up" and "Down" movements. The confusion matrix indicates a high number of misclassifications, with a noticeable bias toward predicting "Up" movements. This may be due to an inherent class imbalance, limitations in the feature set, or the model’s inability to capture the complex, non-linear relationships in stock movement data.
+- This bias toward "Up" predictions suggests that the model may not be receiving enough information to reliably differentiate market directions, highlighting the need for more sophisticated feature engineering.
+
+**Learning Curve:**
+- The gap between training and validation accuracy shows signs of overfitting. As training set size increases, validation accuracy improves slightly but remains below training accuracy, implying the model might not generalize well to unseen data.
+- Given this overfitting trend, our current feature set may not be robust enough to provide consistent predictive signals, which suggests that exploring additional or more meaningful features could help reduce this gap.
+""")
