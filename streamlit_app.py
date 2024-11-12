@@ -1,4 +1,4 @@
-import streamlit as st
+pimport streamlit as st
 
 # Title of the document
 st.title("Stock Market Prediction Using Machine Learning")
@@ -115,7 +115,7 @@ st.header("Midterm Contributions")
 st.write("""
 - **Jake Wang**: Created 1 visualization, split training/testing data for pre-processing, next steps
 - **Yashman Singh**: Implemented models, maintained GitHub, streamlit website
-- **Manya Jain**: 
+- **Manya Jain**: Helped implement models, analysis of models
 - **Jonathan Marto**: Created 2 visualizations and performed feature engineering in preprocessing / preparing test and train folders
 - **Swapnil Mittal**: Updated models for visualization, added quantitative metrics and analysis of algorithm
 """)
