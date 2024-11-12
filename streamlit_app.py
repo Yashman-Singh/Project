@@ -93,3 +93,29 @@ st.write("""
 - The gap between training and validation accuracy shows signs of overfitting. As training set size increases, validation accuracy improves slightly but remains below training accuracy, implying the model might not generalize well to unseen data.
 - Given this overfitting trend, our current feature set may not be robust enough to provide consistent predictive signals, which suggests that exploring additional or more meaningful features could help reduce this gap.
 """)
+
+st.header("Analysis of 1+ algorithms/models")
+st.write("""
+- The algorithm provides a foundational approach to stock price movement prediction using machine learning. By starting with basic features and progressively incorporating advanced technical indicators and sequential data, the code demonstrates the iterative process of model improvement.
+- Data Quality and Feature Engineering**: Stock prediction is inherently challenging due to market volatility. The model's low performance might stem from insufficient or irrelevant features. Including technical indicators or external financial data could improve predictive capability.
+- Hyperparameter Tuning: The model might benefit from fine-tuning hyperparameters to find an optimal configuration for better accuracy and generalization.
+- Feature Engineering: Our initial approach used basic features (e.g., Close, Volume, 30-day Moving Average) along with some engineered indicators. While these provide a foundation, the current results suggest that they may not fully capture the complexities of stock price movements. We’ll explore adding:
+    - Advanced technical indicators, such as the Stochastic Oscillator or Bollinger Bands, which are commonly used to identify price momentum and reversal points.
+    - External market data, like overall market indices, to provide a broader context.
+    - Event-driven or sentiment data to make the model more sensitive to news and events that impact stock prices.
+""")
+
+st.header("Next Steps")
+st.write("""
+The next steps we plan to take include conducting another data preprocessing method. The next method we plan to implement will be Z-score standardization which may help the model be applied more evenly to all different stocks. We will also continue with implementing our ML models which includes random forest and long short term memory. With each model, we plan to use our evaluation metrics which include mean squared error, root mean squared error, and mean absolute percentage error which will help us determine the effectiveness of each of our models for comparison. Currently, our SVM model is not very accurate and through the addition of more data preprocessing, we hope to improve its accuracy.
+""")
+
+# Contributions section
+st.header("Midterm Contributions")
+st.write("""
+- **Jake Wang**: Created 1 visualization, split training/testing data for pre-processing, next steps
+- **Yashman Singh**: Implemented models, maintained GitHub, streamlit website
+- **Manya Jain**: 
+- **Jonathan Marto**: Created 2 visualizations and performed feature engineering in preprocessing / preparing test and train folders
+- **Swapnil Mittal**: Updated models for visualization, added quantitative metrics and analysis of algorithm
+""")
