@@ -1,4 +1,4 @@
-pimport streamlit as st
+import streamlit as st
 
 # Title of the document
 st.title("Stock Market Prediction Using Machine Learning")
