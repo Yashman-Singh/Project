@@ -79,9 +79,9 @@ st.image("GanttChart.jpg", caption="", use_column_width=True)
 # Midterm Sections Below
 st.header("Results and Discussion")
 st.header("Visualizations")
-st.image("GanttChart.jpg", caption="", use_column_width=True)
-st.image("GanttChart.jpg", caption="", use_column_width=True)
-st.image("GanttChart.jpg", caption="", use_column_width=True)
+st.image("confusion matrix.png", caption="", use_column_width=True)
+st.image("learning curve.png", caption="", use_column_width=True)
+st.image("model accuracy.png", caption="", use_column_width=True)
 
 st.header("Quantitative Metrics")
 st.write("""
