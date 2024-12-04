@@ -122,6 +122,7 @@ st.write("""
 """)
 
 # Final sections below---
+st.header("**Final Report**")
 
 st.header("Random Forest Classifier")
 st.write("Learning Curve:")
@@ -218,5 +219,16 @@ The graph highlights performance across four metrics (Accuracy, Precision, Recal
 """)
 
 st.image("comparison1.png", caption="", use_column_width=True)
+
+
+# Contributions section
+st.header("Final Contributions")
+st.write("""
+- **Jake Wang**: Wrote quantitative metrics for Random Forest, model analysis for Random Forest, comparisons between all 3 models, and next steps
+- **Yashman Singh**: Maintained Github and Streamlit website, added code for visual analysis, visualizations, metrics, LSTMs and SVC. Also completed model comparison.
+- **Manya Jain**: Created video, helped with analysis, and implemented LSTM model.
+- **Jonathan Marto**: Implemented Random Forest model, created confusion matrix, prediction accuracy and learning curve visualizations for RF and predicted correctly vs incorrectly for LSTM
+- **Swapnil Mittal**: Updated models for visualization, added quantitative metrics and analysis of models, comparisons between different models, and predicted correctly vs incorrectly for LSTM
+""")
 
 
