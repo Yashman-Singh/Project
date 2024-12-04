@@ -119,3 +119,93 @@ st.write("""
 - **Jonathan Marto**: Created 2 visualizations and performed feature engineering in preprocessing / preparing test and train folders
 - **Swapnil Mittal**: Updated models for visualization, added quantitative metrics and analysis of algorithm
 """)
+
+# Final sections below---
+
+st.header("Random Forest Classifier")
+st.write("Learning Curve:")
+st.image("randomforest1.png", caption="", use_column_width=True)
+
+st.write("Confusion Matrix:")
+st.image("randomforest2.png", caption="", use_column_width=True)
+
+st.write("Model Accuracy:")
+st.image("randomforest3.png", caption="", use_column_width=True)
+
+st.header("LSTM")
+st.write("Training and Validation Loss:")
+st.image("lstm2.png", caption="", use_column_width=True)
+
+st.write("Confusion Matrix:")
+st.image("lstm1.png", caption="", use_column_width=True)
+
+st.write("Model Accuracy:")
+st.image("lstm3.png", caption="", use_column_width=True)
+
+st.write("""
+Random Forest Quantitative Metrics:
+- The model generally will predict that the stock price will move upwards over downwards. From the confusion matrix, it was more accurate in predicting upwards movement when the stock moved upwards over downwards movement when the stock moved downwards. Even when the stock moved downwards, the model predicted upwards movement more often.
+- From the validation score graph, the score begins to increase at just over 800 samples and peaks at around 1200 samples. Overall, the graph shows a large amount of movement in validation score, meaning that the model is unstable and unable to make proper generalizations to the data.
+
+Random Forest Analysis:
+- The overall accuracy of the model is 50% which is the same as randomly guessing without any information. Some potential reasons as to why Random Forest was not effective here was that it does not account for any time related complexities and focuses only on the specific moment. There is likely lots of noise in the data as well making it difficult to detect patterns with Random Forest.
+- Initially, a higher number of decision trees were used. However, using a higher number caused overfitting and drastically decreased the accuracy of the model. By reducing the number of estimators, the model’s accuracy was able to improve and help reduce the impact of overfitting in its predictions.
+
+Random Forest Comparison With SVM:
+- While both models have similar accuracies in predicting stock price movement, though Random Forest is lower, the differences in their effectiveness is highlighted in the confusion matrix. With Random Forest, there is closer to a balance between correct upwards and downwards movement. However, with SVM, it has a very skewed accuracy in predicting upwards movement and has very poor accuracy in predicting downwards movement.
+
+Random Forest Comparison with LSTM:
+- Both models again have similar accuracies in predicting stock price movement with LSTM having a higher accuracy. However, there is another large difference as the majority of the correctness from LSTM comes from predicting downwards movement when the stock moves downwards.
+
+LSTM Comparison with SVM:
+- Both models have a similar accuracy with SVM having a slightly higher accuracy. However, both models are opposite in which aspect they are correct in. LSTM often predicts downwards movement and is often correct when the stock moves downwards. However, SVM often predicts upwards movement and is often correct for upwards movement.
+
+Next Steps:
+- For the next steps, the data would be further processed in order to best reduce the amount of noise and provide a better input for each model. Tests would need to be done to help determine the optimal number of parameters to improve accuracy while still avoiding potential overfitting. Implementing other models can also be considered as there may be other models that are able to better predict stock price movement with the current data. New features could also be included into the data which may have an effect on the models’ ability to make predictions. For example, there may be outside information, such as public sentiment on the stock, which may also be important in improving the accuracy of each model.
+""")
+
+st.header("**Analysis**")
+st.header("**1. Random Forest**")
+st.write("""
+- Accuracy: 48%
+- Precision, Recall, and F1-scores are consistent at approximately 48%.
+- Model performance is balanced but indicates failure to capture significant patterns in the data.
+- Handles non-linear relationships well.
+- Might not leverage sequential time-series relationships effectively.
+""")
+
+st.header("**2. LSTM**")
+st.write("""
+- Accuracy: 50%
+- Slightly better F1-score (Up: 50%, Down: 51%) compared to Random Forest.
+- Accuracy is better than random forest.
+- Captures sequential dependencies due to its architecture.
+- Fine-tuning the model will increase accuracy.
+
+- *Weaknesses*:
+- Training is computationally expensive.
+- Results indicate potential overfitting or lack of sufficient data preprocessing.
+""")
+
+st.header("**3. Support Vector Classifier (SVC)**")
+st.write("""
+- Accuracy: 52%
+Classification Report:
+- Best performance among the three models.
+- High precision (53%) for "Down" predictions but lower recall (31%) for "Up."
+- Performs pretty well with small datasets.
+- Suitable for binary classification.
+- Kernel-based methods can struggle with high-dimensional or noisy data.
+- Imbalanced performance between the two classes.
+""")
+
+st.header("Comparison")
+st.write("""
+The graph highlights performance across four metrics (Accuracy, Precision, Recall, F1-Score):
+
+- SVC performs slightly better than the other models in all metrics.
+- LSTM captures some sequential dependencies but fails to surpass SVC in general performance.
+- Random Forest demonstrates weaker results, due to the lack of temporal modeling for stock data.
+""")
+
+
