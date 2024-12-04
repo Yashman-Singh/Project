@@ -78,6 +78,7 @@ st.image("GanttChart.jpg", caption="", use_column_width=True)
 
 # Midterm Sections Below
 st.header("Results and Discussion")
+st.header("Basic SVM")
 st.header("Visualizations")
 st.image("confusion matrix.png", caption="", use_column_width=True)
 st.image("learning curve.png", caption="", use_column_width=True)
@@ -94,7 +95,7 @@ st.write("""
 - Given this overfitting trend, our current feature set may not be robust enough to provide consistent predictive signals, which suggests that exploring additional or more meaningful features could help reduce this gap.
 """)
 
-st.header("Analysis of 1+ algorithms/models")
+st.header("Analysis of Basic SVM")
 st.write("""
 - The algorithm provides a foundational approach to stock price movement prediction using machine learning. By starting with basic features and progressively incorporating advanced technical indicators and sequential data, the code demonstrates the iterative process of model improvement.
 - Data Quality and Feature Engineering**: Stock prediction is inherently challenging due to market volatility. The model's low performance might stem from insufficient or irrelevant features. Including technical indicators or external financial data could improve predictive capability.
@@ -142,6 +143,14 @@ st.image("lstm1.png", caption="", use_column_width=True)
 st.write("Model Accuracy:")
 st.image("lstm3.png", caption="", use_column_width=True)
 
+st.header("Redone SVC")
+st.write("Confusion Matrix:")
+st.image("svcconfusion.png", caption="", use_column_width=True)
+
+st.write("Model Accuracy:")
+st.image("svcaccuracy.png", caption="", use_column_width=True)
+
+
 st.write("""
 Random Forest Quantitative Metrics:
 - The model generally will predict that the stock price will move upwards over downwards. From the confusion matrix, it was more accurate in predicting upwards movement when the stock moved upwards over downwards movement when the stock moved downwards. Even when the stock moved downwards, the model predicted upwards movement more often.
@@ -151,14 +160,14 @@ Random Forest Analysis:
 - The overall accuracy of the model is 50% which is the same as randomly guessing without any information. Some potential reasons as to why Random Forest was not effective here was that it does not account for any time related complexities and focuses only on the specific moment. There is likely lots of noise in the data as well making it difficult to detect patterns with Random Forest.
 - Initially, a higher number of decision trees were used. However, using a higher number caused overfitting and drastically decreased the accuracy of the model. By reducing the number of estimators, the model’s accuracy was able to improve and help reduce the impact of overfitting in its predictions.
 
-Random Forest Comparison With SVM:
-- While both models have similar accuracies in predicting stock price movement, though Random Forest is lower, the differences in their effectiveness is highlighted in the confusion matrix. With Random Forest, there is closer to a balance between correct upwards and downwards movement. However, with SVM, it has a very skewed accuracy in predicting upwards movement and has very poor accuracy in predicting downwards movement.
+Random Forest Comparison With SVC:
+- While both models have similar accuracies in predicting stock price movement, though Random Forest is lower, the differences in their effectiveness is highlighted in the confusion matrix. With Random Forest, there is closer to a balance between correct upwards and downwards movement. However, with SVC, it has a very skewed accuracy in predicting upwards movement and has very poor accuracy in predicting downwards movement.
 
 Random Forest Comparison with LSTM:
 - Both models again have similar accuracies in predicting stock price movement with LSTM having a higher accuracy. However, there is another large difference as the majority of the correctness from LSTM comes from predicting downwards movement when the stock moves downwards.
 
-LSTM Comparison with SVM:
-- Both models have a similar accuracy with SVM having a slightly higher accuracy. However, both models are opposite in which aspect they are correct in. LSTM often predicts downwards movement and is often correct when the stock moves downwards. However, SVM often predicts upwards movement and is often correct for upwards movement.
+LSTM Comparison with SVC:
+- Both models have a similar accuracy with SVC having a slightly higher accuracy. However, both models are opposite in which aspect they are correct in. LSTM often predicts downwards movement and is often correct when the stock moves downwards. However, SVC often predicts upwards movement and is often correct for upwards movement.
 
 Next Steps:
 - For the next steps, the data would be further processed in order to best reduce the amount of noise and provide a better input for each model. Tests would need to be done to help determine the optimal number of parameters to improve accuracy while still avoiding potential overfitting. Implementing other models can also be considered as there may be other models that are able to better predict stock price movement with the current data. New features could also be included into the data which may have an effect on the models’ ability to make predictions. For example, there may be outside information, such as public sentiment on the stock, which may also be important in improving the accuracy of each model.
@@ -207,5 +216,7 @@ The graph highlights performance across four metrics (Accuracy, Precision, Recal
 - LSTM captures some sequential dependencies but fails to surpass SVC in general performance.
 - Random Forest demonstrates weaker results, due to the lack of temporal modeling for stock data.
 """)
+
+st.image("comparison1.png", caption="", use_column_width=True)
 
 
